@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SongDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:padding="@dimen/dim_8"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/detail_cover_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:scaleType="centerInside"
+            android:src="@drawable/_2002annemarie2018"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_margin="@dimen/dim_5"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/detail_song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_30"
+                android:layout_marginTop="@dimen/dim_5"
+                tools:text="2002"/>
+
+            <TextView
+                android:id="@+id/detail_artist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_20"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/dim_5"
+                tools:text="Anne Marie - 2018"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dim_16">
+
+            <TextView
+                android:id="@+id/playing_price_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_20"
+                android:textColor="@android:color/white"
+                android:layout_margin="@dimen/dim_8"
+                tools:text="0.9$"/>
+            <Button
+                android:id="@+id/buy_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Buy"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
