@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MusicalStructureApp</string>
+    <string name="app_name">Musical Structure App</string>
+    <string name="play">Play</string>
+    <string name="detail">Detail</string>
+    <string name="buy">Buy</string>
+    <string name="search">Search</string>
 </resources>

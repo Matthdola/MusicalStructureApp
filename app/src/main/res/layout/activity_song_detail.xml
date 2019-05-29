@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -32,6 +33,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_size_30"
                 android:layout_marginTop="@dimen/dim_5"
+                android:text="2002"
                 tools:text="2002"/>
 
             <TextView
@@ -41,6 +43,7 @@
                 android:textSize="@dimen/text_size_20"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="@dimen/dim_5"
+                android:text="Anne Marie - 2018"
                 tools:text="Anne Marie - 2018"/>
         </LinearLayout>
 
@@ -58,6 +61,7 @@
                 android:textSize="@dimen/text_size_20"
                 android:textColor="@android:color/white"
                 android:layout_margin="@dimen/dim_8"
+                android:text="0.9$"
                 tools:text="0.9$"/>
             <Button
                 android:id="@+id/buy_button"

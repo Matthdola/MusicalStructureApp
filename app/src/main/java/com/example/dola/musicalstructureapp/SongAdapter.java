@@ -1,12 +1,18 @@
 package com.example.dola.musicalstructureapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,7 +32,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
 
         // Get the Word object located at this position in the list
-        Song currentSong = getItem(position);
+        final Song currentSong = getItem(position);
 
         // Find the the ImageView in the list_item layout with the ID song_cover_img
         ImageView coverImage = listItemView.findViewById(R.id.song_cover_img);
@@ -46,6 +52,66 @@ public class SongAdapter extends ArrayAdapter<Song> {
         // Set the value to the textView
         artistTextView.setText(currentSong.getArtistName());
 
+        ImageButton imageButton = listItemView.findViewById(R.id.item_menu_btn);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(getContext(), v);
+                MenuInflater inflater = popup.getMenuInflater();
+                inflater.inflate(R.menu.list_actions, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Intent intent;
+                        switch (item.getItemId()){
+                            case R.id.action_play_song:
+                                intent = new Intent(getContext(), NowPlayingActivity.class);
+
+                                intent.putExtra("song_name", currentSong.getSongName());
+                                intent.putExtra("artist_name", currentSong.getArtistName());
+                                intent.putExtra("download_price", currentSong.getPrice());
+                                intent.putExtra("cover_image_id", currentSong.getsImageResourceId());
+
+                                getContext().startActivity(intent);
+                                return true;
+
+                            case R.id.action_show_detail:
+                                intent = new Intent(getContext(), SongDetailActivity.class);
+
+                                intent.putExtra("song_name", currentSong.getSongName());
+                                intent.putExtra("artist_name", currentSong.getArtistName());
+                                intent.putExtra("download_price", currentSong.getPrice());
+                                intent.putExtra("cover_image_id", currentSong.getsImageResourceId());
+
+                                getContext().startActivity(intent);
+                                return true;
+
+                            case R.id.action_buy_song:
+                                intent = new Intent(getContext(), StoreActivity.class);
+                                intent.putExtra("song_name", currentSong.getSongName());
+                                intent.putExtra("artist_name", currentSong.getArtistName());
+                                intent.putExtra("download_price", currentSong.getPrice());
+                                intent.putExtra("cover_image_id", currentSong.getsImageResourceId());
+                                getContext().startActivity(intent);
+                                return true;
+
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                popup.show();
+            }
+        });
+
+
         return listItemView;
     }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
+
 }

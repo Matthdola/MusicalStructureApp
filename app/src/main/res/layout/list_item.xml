@@ -30,10 +30,10 @@
                 android:id="@+id/title_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_14"
+                android:textSize="@dimen/text_size_20"
                 android:layout_marginLeft="@dimen/dim_8"
                 android:layout_marginStart="@dimen/dim_8"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="@dimen/dim_8"
                 android:layout_toRightOf="@id/song_cover_img"
                 tools:text="Title"/>
@@ -42,11 +42,11 @@
                 android:id="@+id/artist_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_12"
+                android:textSize="@dimen/text_size_14"
                 android:layout_marginLeft="@dimen/dim_8"
                 android:layout_marginTop="@dimen/dim_5"
                 android:layout_marginStart="@dimen/dim_8"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:layout_toRightOf="@id/song_cover_img"
                 android:layout_below="@id/title_text_view"
                 tools:text="Artist"/>
@@ -58,11 +58,16 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:gravity="center">
-            <ImageView
+            <ImageButton
+                android:id="@+id/item_menu_btn"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/baseline_play_arrow_24"/>
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@null"
+                android:src="@drawable/baseline_more_vert_white_24"
+                android:contentDescription="Show menu"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

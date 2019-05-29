@@ -6,119 +6,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NowPlayingActivity">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        android:padding="@dimen/dim_8"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/playing_cover_img"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            android:scaleType="centerInside"
-            android:src="@drawable/_2002annemarie2018"/>
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:layout_margin="@dimen/dim_5"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:padding="@dimen/dim_8"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/playing_song_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/text_size_30"
-                android:layout_marginTop="@dimen/dim_5"
-                tools:text="2002"/>
 
-            <TextView
-                android:id="@+id/playing_artist_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_20"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="@dimen/dim_5"
-                tools:text="Anne Marie - 2018"/>
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <ProgressBar
-                android:id="@+id/playing_progress"
-                style="@android:style/Widget.ProgressBar.Horizontal"
+            <ImageView
+                android:id="@+id/playing_cover_img"
                 android:layout_width="match_parent"
-                android:layout_margin="@dimen/dim_8"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:progress="25"
-                android:layout_height="2dp" />
-            <TextView
-                android:id="@+id/current_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/playing_progress"
-                android:layout_alignParentLeft="true"
-                android:layout_margin="@dimen/dim_8"
-                android:textColor="@android:color/white"
-                android:text="0:032"/>
-            <TextView
-                android:id="@+id/total_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/playing_progress"
-                android:layout_alignParentRight="true"
-                android:textColor="@android:color/white"
-                android:layout_margin="@dimen/dim_8"
-                android:text="4:02"/>
-        </RelativeLayout>
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:scaleType="centerInside"
+                android:src="@drawable/_2002annemarie2018"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_margin="@dimen/dim_5"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/playing_song_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_30"
+                    android:layout_marginTop="@dimen/dim_5"
+                    android:text="2002"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_margin="@dimen/dim_16">
-            <ImageView
-                android:id="@+id/play_cancel_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="start"
-                android:src="@drawable/baseline_shuffle_white_24"/>
-            <ImageView
-                android:id="@+id/play_previous_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="start"
-                android:src="@drawable/baseline_skip_previous_white_24"/>
+                <TextView
+                    android:id="@+id/playing_artist_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_20"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="@dimen/dim_5"
+                    android:text="Anne Marie - 2018"/>
 
-            <ImageView
-                android:id="@+id/play_current_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/baseline_play_arrow_white_24"/>
+                <ImageView
+                    android:id="@+id/play_show_others_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:src="@drawable/baseline_keyboard_arrow_up_white_24"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ProgressBar
+                    android:id="@+id/playing_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/dim_8"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:progress="25"
+                    android:layout_height="2dp" />
+                <TextView
+                    android:id="@+id/current_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/playing_progress"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="@dimen/dim_8"
+                    android:textColor="@android:color/white"
+                    android:text="0:032"/>
 
-            <ImageView
-                android:id="@+id/play_repeat_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="end"
-                android:src="@drawable/baseline_skip_next_white_24"/>
+                <TextView
+                    android:id="@+id/total_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/playing_progress"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="@dimen/dim_8"
+                    android:text="4:02"/>
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/play_next_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_gravity="end"
-                android:src="@drawable/baseline_repeat_one_white_24"/>
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/dim_16">
+                <ImageView
+                    android:id="@+id/play_cancel_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:src="@drawable/baseline_shuffle_white_24"/>
+                <ImageView
+                    android:id="@+id/play_previous_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:src="@drawable/baseline_skip_previous_white_24"/>
+
+                <ImageView
+                    android:id="@+id/play_current_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/baseline_play_arrow_white_24"/>
+
+                <ImageView
+                    android:id="@+id/play_next_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:src="@drawable/baseline_skip_next_white_24"/>
+
+                <ImageView
+                    android:id="@+id/play_repeat_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:src="@drawable/baseline_repeat_one_white_24"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/more_song_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <ListView
+                    android:id="@+id/list_item_on_playing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
