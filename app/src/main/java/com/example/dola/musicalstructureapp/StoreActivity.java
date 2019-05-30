@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -44,20 +45,14 @@ public class StoreActivity extends AppCompatActivity {
         SongAdapter itemsAdapter = new SongAdapter(this, songs, SCREEN_NUMBER);
 
         listView.setAdapter(itemsAdapter);
-        /*
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        Button btnQuitApp = findViewById(R.id.quit_activity_btn);
+        btnQuitApp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, NowPlayingActivity.class);
-                Song song = songs.get(position);
-                intent.putExtra("song_name", song.getSongName());
-                intent.putExtra("artist_name", song.getArtistName());
-                intent.putExtra("download_price", song.getPrice());
-                intent.putExtra("cover_image_id", song.getsImageResourceId());
-                startActivity(intent);
+            public void onClick(View v) {
+                finish();
             }
         });
-        */
     }
 
 

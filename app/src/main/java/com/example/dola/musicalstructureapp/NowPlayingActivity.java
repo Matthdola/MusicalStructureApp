@@ -1,10 +1,11 @@
 package com.example.dola.musicalstructureapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
@@ -16,6 +17,10 @@ public class NowPlayingActivity extends AppCompatActivity {
     private double currentTime=0;
     private double totalTime = 4;
 
+    String songName,  artistName;
+    double downloadPrice ;
+    int coverImageResourceId ;
+
     @BindView(R.id.playing_song_name)
     TextView playingSongName ;
 
@@ -26,46 +31,42 @@ public class NowPlayingActivity extends AppCompatActivity {
     ImageView coverImageView ;
 
     @BindView(R.id.play_current_button)
-    ImageView playImageBtn;
+    ImageButton playImageBtn;
 
     @BindView(R.id.play_next_button)
-    ImageView nextImageBtn;
+    ImageButton nextImageBtn;
 
     @BindView(R.id.play_previous_button)
-    ImageView previousImageBtn;
+    ImageButton previousImageBtn;
 
-    @BindView(R.id.play_repeat_button)
-    ImageView repeatImageBtn;
+    @BindView(R.id.play_info_button)
+    ImageButton infoImageBtn;
 
-    @BindView(R.id.play_cancel_button)
-    ImageView cancelImageBtn;
+    @BindView(R.id.play_back_button)
+    ImageButton backImageBtn;
 
     @BindView(R.id.play_show_others_button)
-    ImageView moreImageBtn;
+    ImageButton moreImageBtn;
 
-    @BindView(R.id.more_song_list)
-    LinearLayout moreSongList;
+    //@BindView(R.id.more_song_list)
+    //LinearLayout moreSongList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
+
         ButterKnife.bind(this);
+        //getSupportActionBar().hide();
 
-        String songName = getIntent().getStringExtra("song_name");
-        String artistName = getIntent().getStringExtra("artist_name");
-        double downloadPrice = getIntent().getDoubleExtra("download_price", 0);
-        int coverImageResourceId = getIntent().getIntExtra("cover_image_id", 0);
+        songName = getIntent().getStringExtra("song_name");
+        artistName = getIntent().getStringExtra("artist_name");
+        downloadPrice = getIntent().getDoubleExtra("download_price", 0);
+        coverImageResourceId = getIntent().getIntExtra("cover_image_id", 0);
 
-        coverImageView = findViewById(R.id.playing_cover_img);
         coverImageView.setImageResource(coverImageResourceId);
-
-        playingSongName = findViewById(R.id.playing_song_name);
         playingSongName.setText(songName);
-
-
-        playingArtistName = findViewById(R.id.playing_artist_name);
         playingArtistName.setText(artistName);
 
         playImageBtn.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +87,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         nextImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(NowPlayingActivity.this, "You request the next song", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NowPlayingActivity.this, "You request the next song", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -95,35 +96,38 @@ public class NowPlayingActivity extends AppCompatActivity {
         previousImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(NowPlayingActivity.this, "You request the previous song", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NowPlayingActivity.this, "You request the previous song", Toast.LENGTH_SHORT).show();
             }
         });
 
 
-        repeatImageBtn.setOnClickListener(new View.OnClickListener() {
+        infoImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), SongDetailActivity.class);
+                i.putExtra("song_name", songName);
+                i.putExtra("artist_name", artistName);
+                i.putExtra("download_price", downloadPrice);
+                i.putExtra("cover_image_id", coverImageResourceId);
 
-                Toast.makeText(NowPlayingActivity.this, "You set playing to repeat mode", Toast.LENGTH_SHORT).show();
-
+                startActivity(i);
             }
         });
 
-        cancelImageBtn.setOnClickListener(new View.OnClickListener() {
+        backImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(NowPlayingActivity.this, "You clicked on the shuffle button", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
         moreImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(NowPlayingActivity.this, "Show more songs on the same screen", Toast.LENGTH_SHORT).show();
-                moreSongList.setVisibility(View.VISIBLE);
+            Toast.makeText(NowPlayingActivity.this, "Show more songs on the same screen", Toast.LENGTH_SHORT).show();
+            //moreSongList.setVisibility(View.VISIBLE);
             }
         });
-
 
     }
 }

@@ -25,7 +25,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:contentDescription="@string/song_image_cover"/>
 
             <TextView
                 android:id="@+id/title_text_view"
@@ -37,7 +38,6 @@
                 android:id="@+id/artist_text_view"
                 style="@style/TextTheme"
                 android:textSize="@dimen/text_size_14"
-                android:layout_marginTop="@dimen/dim_5"
                 android:layout_toRightOf="@id/song_cover_img"
                 android:layout_below="@id/title_text_view"
                 tools:text="Artist"/>
@@ -46,7 +46,6 @@
                 android:id="@+id/price_text_view"
                 style="@style/TextTheme"
                 android:textSize="@dimen/text_size_12"
-                android:layout_marginTop="@dimen/dim_5"
                 android:layout_toRightOf="@id/song_cover_img"
                 android:layout_below="@id/artist_text_view"
                 tools:text="Artist"/>
@@ -75,7 +74,7 @@
                 android:focusable="true"
                 android:background="@null"
                 android:src="@drawable/baseline_more_vert_white_24"
-                android:contentDescription="Show menu"/>
+                android:contentDescription="@string/show_menu"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

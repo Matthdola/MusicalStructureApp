@@ -11,11 +11,29 @@
     <style name="TextTheme" parent="AppTheme">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+
         <item name="android:textSize">@dimen/text_size_20</item>
         <item name="android:layout_marginLeft">@dimen/dim_8</item>
         <item name="android:layout_marginStart">@dimen/dim_8</item>
-        <item name="android:layout_marginTop">@dimen/dim_8</item>
+        <item name="android:layout_marginBottom">@dimen/dim_5</item>
+    </style>
+
+    <style name="DetailTextTheme" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:layout_marginTop">@dimen/dim_5</item>
+    </style>
+
+
+    <style name="ContainerTheme" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/dim_5</item>
     </style>
 
 </resources>

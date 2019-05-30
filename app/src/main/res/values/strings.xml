@@ -1,9 +1,17 @@
 <resources>
-    <string name="app_name">Musical Structure App</string>
+    <string name="app_name">Playlist</string>
     <string name="play">Play</string>
     <string name="detail">Detail</string>
     <string name="buy">Buy</string>
     <string name="search">Search</string>
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
+    <string name="song_image_cover">Song image cover</string>
+    <string name="show_menu">Show menu</string>
+    <string name="show_shop_screen">Show Shop screen</string>
+    <string name="search_song">Search Song</string>
+    <string name="store">Store</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="search_for_song">Search for Song</string>
+    <string name="quit_this_screen">Quit this screen</string>
 </resources>

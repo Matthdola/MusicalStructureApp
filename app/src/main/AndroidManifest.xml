@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SearchActivity"
-            android:label="Search Song"></activity>
+            android:label="@string/search_song"></activity>
         <activity android:name=".StoreActivity"
-            android:label="Store"/>
+            android:label="@string/store"/>
         <activity android:name=".SongDetailActivity"
-            android:label="Detail"/>
+            android:label="@string/detail"/>
         <activity android:name=".NowPlayingActivity"
-            android:label="Now Playing"/>
+            android:label="@string/now_playing"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

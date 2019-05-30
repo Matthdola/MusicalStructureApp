@@ -75,7 +75,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
         // Get the Song price  value from the current song object
         // Set the value to the textView
         TextView priceTextView = listItemView.findViewById(R.id.price_text_view);
-        priceTextView.setText(String.format("$%s",currentSong.getPrice()));
+        priceTextView.setText(String.format("$ %s",currentSong.getPrice()));
 
 
         final CheckBox checkBox = listItemView.findViewById(R.id.select_song);
@@ -89,6 +89,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
                 public void onClick(View v) {
                     if (checkBox.isChecked()){
                         currentSong.setSelected(true);
+
                     } else {
                         currentSong.setSelected(false);
                     }

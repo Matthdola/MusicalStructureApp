@@ -8,18 +8,21 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int MY_PERMISSION_REQUEST = 1;
+    // Create an array of words
+    public ArrayList<Song> songs = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Create an array of words
-        final ArrayList<Song> songs = new ArrayList<Song>();
 
         songs.add(new Song("Shallow", "Badley Cooper", R.drawable.shallowbradleycooper2018, 5.0));
         songs.add(new Song("2002", "Anne-Marie", R.drawable._2002annemarie2018, 8.0));
@@ -38,16 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(itemsAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        Button btnQuitApp = findViewById(R.id.quit_activity_btn);
+        btnQuitApp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, NowPlayingActivity.class);
-                Song song = songs.get(position);
-                intent.putExtra("song_name", song.getSongName());
-                intent.putExtra("artist_name", song.getArtistName());
-                intent.putExtra("download_price", song.getPrice());
-                intent.putExtra("cover_image_id", song.getsImageResourceId());
-                startActivity(intent);
+            public void onClick(View v) {
+                finish();
             }
         });
     }

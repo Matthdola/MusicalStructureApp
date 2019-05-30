@@ -6,7 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
-    <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,20 +24,21 @@
                 android:id="@+id/search_zone_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Search song"
                 android:textColor="@android:color/white"
-                android:hint="Search for Song"
+                android:hint="@string/search_for_song"
                 android:textColorHint="@android:color/white"/>
-            <ImageView
+            <ImageButton
+                android:id="@+id/search_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_search_white_24"
                 android:layout_alignParentRight="true"
                 android:layout_toLeftOf="@id/search_zone_edit"
                 android:layout_marginTop="@dimen/dim_5"
+                android:background="@null"
+                android:layout_marginRight="@dimen/dim_10"
                 android:clickable="true"
-                android:focusable="true"
-                android:onClick="searchSong"/>
+                android:focusable="true"/>
 
         </RelativeLayout>
 
@@ -61,5 +65,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
