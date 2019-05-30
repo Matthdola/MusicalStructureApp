@@ -24,31 +24,31 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:clickable="true"/>
 
             <TextView
                 android:id="@+id/title_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_20"
-                android:layout_marginLeft="@dimen/dim_8"
-                android:layout_marginStart="@dimen/dim_8"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="@dimen/dim_8"
+                style="@style/TextTheme"
                 android:layout_toRightOf="@id/song_cover_img"
                 tools:text="Title"/>
 
             <TextView
                 android:id="@+id/artist_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextTheme"
                 android:textSize="@dimen/text_size_14"
-                android:layout_marginLeft="@dimen/dim_8"
                 android:layout_marginTop="@dimen/dim_5"
-                android:layout_marginStart="@dimen/dim_8"
-                android:textColor="@android:color/white"
                 android:layout_toRightOf="@id/song_cover_img"
                 android:layout_below="@id/title_text_view"
+                tools:text="Artist"/>
+
+            <TextView
+                android:id="@+id/price_text_view"
+                style="@style/TextTheme"
+                android:textSize="@dimen/text_size_12"
+                android:layout_marginTop="@dimen/dim_5"
+                android:layout_toRightOf="@id/song_cover_img"
+                android:layout_below="@id/artist_text_view"
                 tools:text="Artist"/>
 
         </RelativeLayout>
@@ -58,6 +58,14 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:gravity="center">
+            <CheckBox
+                android:id="@+id/select_song"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@android:color/white"
+                android:visibility="gone"
+                />
             <ImageButton
                 android:id="@+id/item_menu_btn"
                 android:layout_gravity="center"

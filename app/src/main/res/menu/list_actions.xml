@@ -7,7 +7,4 @@
 
     <item android:id="@+id/action_show_detail"
         android:title="@string/detail"/>
-
-    <item android:id="@+id/action_buy_song"
-        android:title="@string/buy"/>
 </menu>

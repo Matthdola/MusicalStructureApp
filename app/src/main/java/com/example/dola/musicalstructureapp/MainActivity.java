@@ -9,8 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
         // Create an array of words
         final ArrayList<Song> songs = new ArrayList<Song>();
 
-        songs.add(new Song("Shallow", "Badley Cooper", R.drawable.shallowbradleycooper2018));
-        songs.add(new Song("2002", "Anne-Marie", R.drawable._2002annemarie2018));
-        songs.add( new Song("Havana", "Camila Cabello", R.drawable.havanacamilacabello2018));
-        songs.add(new Song("Fake Love", "BTS", R.drawable.fakeloverockingbts2018));
-        songs.add(new Song("When I'm with Him", "Empresso Of", R.drawable.whenimwithhimempressof2018));
-        songs.add(new Song("Nice For What", "Drake", R.drawable.niceforwhatdrake2018));
-        songs.add(new Song("Mariners Apartment", "Lana Del Rey", R.drawable.marinersapartementlanadelrey2018));
-        songs.add(new Song("Drip Too Hard", "Gunna", R.drawable.driptoohardgunna2018));
-        songs.add(new Song("Boo'd Up", "Ella Mai", R.drawable.boodupellamai2018));
-        songs.add(new Song("Venice Bitch", "Lana Del Rey", R.drawable.venicebitchlanadelrey2018));
-        songs.add(new Song("Self Care", "Mac Miller", R.drawable.selfcaremacmiller2018));
+        songs.add(new Song("Shallow", "Badley Cooper", R.drawable.shallowbradleycooper2018, 5.0));
+        songs.add(new Song("2002", "Anne-Marie", R.drawable._2002annemarie2018, 8.0));
+        songs.add( new Song("Havana", "Camila Cabello", R.drawable.havanacamilacabello2018, 3.0));
+        songs.add(new Song("Fake Love", "BTS", R.drawable.fakeloverockingbts2018, 2.0));
+        songs.add(new Song("When I'm with Him", "Empresso Of", R.drawable.whenimwithhimempressof2018, 9.0));
+        songs.add(new Song("Nice For What", "Drake", R.drawable.niceforwhatdrake2018, 2.0));
+        songs.add(new Song("Mariners Apartment", "Lana Del Rey", R.drawable.marinersapartementlanadelrey2018, 1.0));
+        songs.add(new Song("Drip Too Hard", "Gunna", R.drawable.driptoohardgunna2018, 3.0));
+        songs.add(new Song("Boo'd Up", "Ella Mai", R.drawable.boodupellamai2018, 10.0));
+        songs.add(new Song("Venice Bitch", "Lana Del Rey", R.drawable.venicebitchlanadelrey2018, 10.0));
+        songs.add(new Song("Self Care", "Mac Miller", R.drawable.selfcaremacmiller2018, 1.0));
 
         ListView listView = findViewById(R.id.list);
         SongAdapter itemsAdapter = new SongAdapter(this, songs);
@@ -68,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, SearchActivity.class);
                 startActivity(intent);
                 return  true;
+
+            case R.id.action_buy_song:
+                Intent i = new Intent(this, StoreActivity.class);
+                startActivity(i);
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

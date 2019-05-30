@@ -7,6 +7,7 @@ public class Song {
     private int sImageResourceId;
     private double price;
     private double size;
+    private boolean selected = false;
 
 
     public Song(String songName, String artistName, String albumName){
@@ -19,6 +20,13 @@ public class Song {
         this.songName = songName;
         this.artistName = artistName;
         this.sImageResourceId = sImageResourceId;
+    }
+
+    public Song(String songName, String artistName, int sImageResourceId, double price){
+        this.songName = songName;
+        this.artistName = artistName;
+        this.sImageResourceId = sImageResourceId;
+        this.price = price;
     }
 
     public Song(String songName, String artistName, String albumName, int sImageResourceId){
@@ -84,5 +92,14 @@ public class Song {
 
     public void setSize(double size) {
         this.size = size;
+    }
+
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
